@@ -3,9 +3,8 @@
 
 	<div><%= review.reviewtitle %></div>
 	<div><%= review.username %></div>
-	<button class="btn btn-default">+1</button>
-	<div><%= review.rating %></div>
-
+	<button class="btn btn-default"><%= link_to "+1", review_path(review), class: "fa fa-caret-up", method: :put %></button>
+	<h3><%= review.rating %></h3>
 
 
 <% end %>
