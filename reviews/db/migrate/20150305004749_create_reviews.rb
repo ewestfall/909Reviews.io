@@ -5,7 +5,7 @@ class CreateReviews < ActiveRecord::Migration
     	t.string :reviewtitle
     	t.text :review
     	t.integer :rating
-
+    	t.references :product
       t.timestamps null: false
     end
   end

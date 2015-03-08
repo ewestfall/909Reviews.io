@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   
-  root 'products#home'
+  root 'products#index'
+  resources :products
   resources :reviews
 
   get 'reviews' => 'reviews#review'

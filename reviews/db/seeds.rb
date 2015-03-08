@@ -6,5 +6,11 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 
-products =  Product.create([{ name: 'Uber', description: 'Phasellus sodales turpis vitae orci mollis tempor. Maecenas placerat euismod eros nec auctor. In id convallis nisl. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Integer rhoncus ligula eu felis auctor, sit amet imperdiet urna dignissim. Praesent dignissim lectus nec eros fringilla, a viverra diam luctus. Morbi libero augue, laoreet vitae odio a, egestas vestibulum diam. Praesent porta lobortis efficitur. Donec at porta massa. Integer ut nulla tincidunt, finibus tortor vel, ornare massa.', image: 'images/uber.jpg'}])
-reviews = Review.create([{username: 'Joe', reviewtitle: 'Great App', review: 'turpis vitae orci mollis tempor', rating: 0}])
+
+p1 = Product.create(name: 'Uber', description: 'Putting TLC out of business one independently-owned Toyota Corolla at a time', image: 'images/uber.jpg')
+Review.create(username: 'Joe', reviewtitle: 'I was lost without it.', review: 'turpis vitae orci mollis tempor', rating: 0, product_id: p1.id)
+Review.create(username: 'Ben', reviewtitle: 'Better than a Taxi!', review: 'turpis vitae orci mollis tempor', rating: 0, product_id: p1.id)
+
+p2 =  Product.create(name: 'Netflix', description: 'Movies and stuff', image: 'images/uber.jpg')
+Review.create(username: 'Erin', reviewtitle: 'Netflick Rox', review: 'turpis vitae orci mollis tempor', rating: 0, product_id: p2.id)
+Review.create(username: 'Elise', reviewtitle: 'Lame. Lol.', review: 'turpis vitae orci mollis tempor', rating: 0, product_id: p2.id)
