@@ -1,3 +1,18 @@
 // Place all the styles related to the Products controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+body h3 a {
+	color: #3299BB;
+}
+
+.product_image img {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.products {
+	background-color: white;
+	border-radius: 3px;
+	padding: 10px;
+}

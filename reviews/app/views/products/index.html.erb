@@ -1,9 +1,24 @@
-<% @products.each do |product| %>
 
-<ul>
-	<li><%=link_to product.name, product %></li>
-	<li><%= product.description %></li>
-</ul>
+<div class="jumbotron">
+	<div class="container">
 
+	</div>
+</div>
 
-<% end %>
+<div class="main">
+	<div class="container">
+		<div class="row">
+			<% @products.each do |product| %>
+				<div class="col-md-4">
+					<div class="products">
+						<div class="product_image"><%= image_tag product.image %></div>
+						<p><%= product.description %></p>
+						<p><%= @lastreview %></p>
+						<button class="btn btn-default"><%=link_to 'Read Reviews', product %></button>
+					</div>
+				</div>
+			<% end %>
+		</div>
+	</div>
+</div>
+

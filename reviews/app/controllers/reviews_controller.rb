@@ -4,6 +4,7 @@ class ReviewsController < ApplicationController
 		# @reviews = Review.order(rating: :desc).all
 	end
 
+
 	# def new
 	# 	@reviews = Review.new
 	# end
