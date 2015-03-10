@@ -6,10 +6,49 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href='http://fonts.googleapis.com/css?family=Quicksand:400,700' rel='stylesheet' type='text/css'>
 </head>
 <body>
-	<div class="header"><a href="/">Home</a></div>
+	
+    <div class="logo">
+      <h3><a href="/">909 Reviews</a></h3>
+     	<p>Review your favorite products and share ideas to make them better.</p>
+    </div>
+    
+        <form class="navbar-form navbar-right" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+        </form>
+      	
+	<div class="header">      
+      <div class="container">
+      	 
+        <ul class="nav nav-pills">
+            <li role="presentation"><a href="/">Home</a></li>
+            <li role="presentation"><a href="/">About</a></li>
+            <li role="presentation"><a href="/">Browse Products</a></li>
+            <li role="presentation"><a href="/">Add Product</a></li>
+        </ul>
+      	
+      </div>
+  </div>
+	
 <%= yield %>
+
+<div class="footer">
+  <div class="container">
+    
+  <ul>
+    <li>About</li>
+    <li>Contact</li>
+    <li>Careers</li>
+  </ul>
+  
+   <p>&#169 2015 909Reviews</p>
+  </div>
+</div>
+
 
 </body>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
