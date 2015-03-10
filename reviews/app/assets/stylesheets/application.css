@@ -37,3 +37,23 @@ body h5 {
 body a {
 	color: #FF9900;
 }
+
+/* Main Header */
+
+/* Footer */
+.footer {
+	background-color: #424242;
+}
+
+.footer li {
+	text-decoration: none;
+	float: left;
+	font-size: 16px;
+	color: #ff9900;
+}
+
+.footer p {
+	float: right;
+	font-size: 12px;
+	color: #000;
+}

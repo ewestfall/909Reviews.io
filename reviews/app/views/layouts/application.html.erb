@@ -8,8 +8,40 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<div class="header"><a href="/">Home</a></div>
+	<div class="logo">
+	  <h3><a href="/">909 Reviews</a></h3>
+	 	<p>Review your favorite products and share ideas to make them better.</p>
+	</div>
+	
+	<div class="header">
+  	<p>Review your favorite products and share ideas to make them better.</p>
+  	  <ul class="nav nav-pills">
+        <li role="presentation" class="active"><a href="/">Home</a></li>
+        <li role="presentation"><a href="/">About</a></li>
+        <li role="presentation"><a href="/">Browse Products</a></li>
+        <li role="presentation"><a href="/">Add Product</a></li>
+      </ul>
+  	
+	<form class="navbar-form navbar-left" role="search">
+    <div class="form-group">
+      <input type="text" class="form-control" placeholder="Search">
+    </div>
+  </form>
+  
+</div>
+	
 <%= yield %>
+
+<div class="footer">
+  <ul>
+    <li>About</li>
+    <li>Contact</li>
+    <li>Careers</li>
+  </ul>
+  
+   <p>&#169 2015 909Reviews</p>
+</div>
+
 
 </body>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
