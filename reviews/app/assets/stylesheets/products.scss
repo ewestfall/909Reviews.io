@@ -6,6 +6,13 @@ body h3 a {
 	color: #3299BB;
 }
 
+.banner { position: relative; overflow: auto; margin-bottom: 50px;}
+    .banner li { list-style: none; }
+        .banner ul li { float: left; }
+        	.banner ul li img {
+        		width: 100%;
+        	}
+
 .product_image img {
 	width: 100%;
 	margin-bottom: 20px;
@@ -26,22 +33,29 @@ body h3 a {
 	margin-bottom: 20px;
 }
 
-.reviewtext {
+.reviewtitle {
+	background-color: #F1F1F1;
 	padding: 10px;
 	border-bottom: 1px solid #e8e8e8;
+	height: 40px;
 }
 
-.reviewtext h5 {
+.reviewtitle h5 {
 	float: left;
 	margin-top: 0px;
 }
 
-.reviewtext span {
+.reviewtitle span {
 	float: right;
 	background-color: #3299BB;
 	color: white;
 	padding: 1px 5px;
 	border-radius: 2px;
+}
+
+.reviewtext {
+	padding: 10px;
+	border-bottom: 1px solid #e8e8e8;
 }
 
 .reviewtext p {

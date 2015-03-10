@@ -1,8 +1,10 @@
 
-<div class="jumbotron">
-	<div class="container">
-
-	</div>
+<div class="banner">
+    <ul>
+        <li><%= image_tag 'heroimage1.jpg' %></li>
+        <li><%= image_tag 'heroimage2.jpg' %></li>
+        <li><%= image_tag 'heroimage3.jpg' %></li>
+    </ul>
 </div>
 
 <div class="main">
@@ -17,14 +19,12 @@
 						</div>
 						<h4>Latest Review</h4>
 						<div class="latestreview">
+							<div class="reviewtitle">
+								<h5><%= product.reviews.last.reviewtitle %></h5>
+								<span> <%= product.reviews.last.rating %></span>
+							</div>
 							<div class="reviewtext">
-								<div class="row">
-									<div class="col-md-12">
-										<h5><%= product.reviews.last.reviewtitle %></h5>
-										<span> <%= product.reviews.last.rating %></span>
-										<p><%= product.reviews.last.review %></p>
-									</div>
-								</div>
+								<p><%= product.reviews.last.review %></p>
 							</div>
 							<div class="metadata">
 								<%= image_tag 'profile.png' %>
