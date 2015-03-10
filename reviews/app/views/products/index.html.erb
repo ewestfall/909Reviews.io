@@ -11,10 +11,32 @@
 			<% @products.each do |product| %>
 				<div class="col-md-4">
 					<div class="products">
-						<div class="product_image"><%= image_tag product.image %></div>
-						<p><%= product.description %></p>
-						<p><%= @lastreview %></p>
-						<button class="btn btn-default"><%=link_to 'Read Reviews', product %></button>
+						<div class="productdescription">
+							<div class="product_image"><%= image_tag product.image %></div>
+							<p><%= product.description %></p>
+						</div>
+						<h4>Latest Review</h4>
+						<div class="latestreview">
+							<div class="reviewtext">
+								<div class="row">
+									<div class="col-md-12">
+										<h5><%= product.reviews.last.reviewtitle %></h5>
+										<span> <%= product.reviews.last.rating %></span>
+										<p><%= product.reviews.last.review %></p>
+									</div>
+								</div>
+							</div>
+							<div class="metadata">
+								<%= image_tag 'profile.png' %>
+								<%= product.reviews.last.username %>
+								<span class="reviewtime">
+								<%= product.reviews.last.updated_at.strftime("%B %d, %Y @ %l:%M:%S %P") %>
+								</span>
+							</div>
+						</div>
+						<div class="button">
+							<button class="btn btn-default readreviews"><%=link_to 'Read More Reviews', product %></button>
+						</div>
 					</div>
 				</div>
 			<% end %>

@@ -16,5 +16,5 @@ Review.create(username: 'Erin', reviewtitle: 'Netflick Rox', review: 'turpis vit
 Review.create(username: 'Elise', reviewtitle: 'Lame. Lol.', review: 'turpis vitae orci mollis tempor', rating: 0, product_id: p2.id)
 
 p3 =  Product.create(name: 'Spotify', description: 'Spotify brings you the right music for every moment – on your computer, your mobile, your tablet, your home entertainment system and more. If you know what you want, just search and hit play. Or discover new music by browsing the collections of friends, artists and celebrities. Or sit back and enjoy Spotify Radio. And because music is social, so is Spotify. Share music on Spotify, Facebook, Twitter, your blog and via email. You can also follow other cool people – so when they discover music, you do too. Soundtrack your life with Spotify.', image: 'spotify_logo.png')
-Review.create(username: 'Pete', reviewtitle: 'Netflick Rox', review: 'turpis vitae orci mollis tempor', rating: 0, product_id: p2.id)
-Review.create(username: 'Joe', reviewtitle: 'Lame. Lol.', review: 'turpis vitae orci mollis tempor', rating: 0, product_id: p2.id)
+Review.create(username: 'Pete', reviewtitle: 'Netflick Rox', review: 'turpis vitae orci mollis tempor', rating: 0, product_id: p3.id)
+Review.create(username: 'Joe', reviewtitle: 'Lame. Lol.', review: 'turpis vitae orci mollis tempor', rating: 0, product_id: p3.id)
