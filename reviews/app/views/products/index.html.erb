@@ -2,8 +2,8 @@
 <div class="banner">
     <ul>
         <li><%= image_tag 'heroimage1.jpg' %></li>
-        <li><%= image_tag 'heroimage2.jpg' %></li>
-        <li><%= image_tag 'heroimage3.jpg' %></li>
+<!--         <li><%= image_tag 'heroimage2.jpg' %></li>
+        <li><%= image_tag 'heroimage3.jpg' %></li> -->
     </ul>
 </div>
 
@@ -17,26 +17,36 @@
 							<div class="product_image"><%= image_tag product.image %></div>
 							<p><%= product.description %></p>
 						</div>
-						<h4>Latest Review</h4>
-						<div class="latestreview">
-							<div class="reviewtitle">
-								<h5><%= product.reviews.last.reviewtitle %></h5>
-								<span> <%= product.reviews.last.rating %></span>
+						<% if product.reviews.last %>
+							<h5>Latest Review</h5>
+							<div class="latestreview">
+								<div class="reviewtitle">
+									<h4><%= product.reviews.last.reviewtitle %></h4>
+									<span> <%= product.reviews.last.rating %></span>
+								</div>
+								<div class="reviewtext">
+									<p><%= product.reviews.last.review %></p>
+								</div>
+								<div class="metadata">
+									<%= image_tag 'profile.png' %>
+									<%= product.reviews.last.username %>
+									<span class="reviewtime">
+									<%= product.reviews.last.updated_at.strftime("%B %d, %Y @ %l:%M:%S %P") %>
+									</span>
+								</div>
 							</div>
-							<div class="reviewtext">
-								<p><%= product.reviews.last.review %></p>
+							<div class="button">
+								<button class="btn btn-default readreviews"><%=link_to 'More Reviews', product %></button>
 							</div>
-							<div class="metadata">
-								<%= image_tag 'profile.png' %>
-								<%= product.reviews.last.username %>
-								<span class="reviewtime">
-								<%= product.reviews.last.updated_at.strftime("%B %d, %Y @ %l:%M:%S %P") %>
-								</span>
+						<% else %>
+							<h5>Latest Review</h5>
+							<div class="latestreview reviewtext">
+								No one has written a review yet...
 							</div>
-						</div>
-						<div class="button">
-							<button class="btn btn-default readreviews"><%=link_to 'Read More Reviews', product %></button>
-						</div>
+							<div class="button">
+								<button class="btn btn-default readreviews"><%=link_to 'Be the First', product %></button>
+							</div>
+						<% end %> 
 					</div>
 				</div>
 			<% end %>

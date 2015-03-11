@@ -40,7 +40,7 @@ body h3 a {
 	height: 40px;
 }
 
-.reviewtitle h5 {
+.reviewtitle h4 {
 	float: left;
 	margin-top: 0px;
 }
@@ -72,12 +72,16 @@ body h3 a {
 }
 
 .button button {
-	border: 2px solid #FF9900;
+	border: 1px solid #FF9900;
 	border-radius: 2px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	font-size: 12px;
+	margin-bottom: 10px;
 }
 
 .button button:hover {
-	border: 2px solid #FF9900;
+	border: 1px solid #FF9900;
 	background-color: #FF9900;
 }
 
