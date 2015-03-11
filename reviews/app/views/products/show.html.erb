@@ -13,10 +13,12 @@
 				<div class="review_description"><%= review.review %></div>
 				<div class="review_user"><%= review.username %></div>
 			</div>
-				<div class="col-md-2" id="upvote">
-					<button class="btn btn-default"><%= link_to "+1", review_path(review), class: "fa fa-caret-up", method: :put %></button>
+				<div class="col-md-2 upvote">
+					<div class="button">
+						<button class="button btn btn-default"><%= link_to "+1", review_path(review), class: "fa fa-caret-up", method: :put %></button>
+					</div>
 				</div>
-				<div class="col-md-2" id="rating">
+				<div class="col-md-2 rating" id="rating">
 					<h3 class="rating"><%= review.rating %></h3>
 				</div>
 					<% end %>	
