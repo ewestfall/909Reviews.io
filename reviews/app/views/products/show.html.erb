@@ -1,15 +1,16 @@
 <div class="container" id="review">
-		<div class="row">	
+		<div class="row review title">	
 			<h1><%= @product.name %></h1>
 			<% @reviews.each do |review| %>
 		</div>			
 
 
 
-		<div class="row">
+		<div class="row review">
 
-			<div class="col-md-8" id="review_title">
-				<div><%= review.reviewtitle %></div>
+			<div class="col-md-8" id="review_detail">
+				<div class="review_title"><%= review.reviewtitle %></div>
+				<div class="review_description"><%= review.review %></div>
 				<div class="review_user"><%= review.username %></div>
 			</div>
 				<div class="col-md-2" id="upvote">
