@@ -6,12 +6,15 @@ body h3 a {
 	color: #3299BB;
 }
 
-.banner { position: relative; overflow: auto; margin-bottom: 50px;}
-    .banner li { list-style: none; }
-        .banner ul li { float: left; }
-        	.banner ul li img {
-        		width: 100%;
-        	}
+.jumbotron img {
+	width: 100%;
+}
+
+body .jumbotron {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-bottom: 60px;
+}
 
 .product_image img {
 	width: 100%;

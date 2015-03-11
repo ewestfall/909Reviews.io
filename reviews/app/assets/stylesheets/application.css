@@ -66,10 +66,10 @@ body a {
 	float: right;
 	margin-right: 15px;
 }
-.nav {
-	margin-left: -100px;	
-}
 
+.nav {
+	float: left;
+}
 .nav li a {
 	display: inline;
 	border-radius: 0px;
@@ -79,8 +79,8 @@ body a {
 /* Footer */
 .footer {
 	background-color: #424242;
-	margin-top: -40px;
 	height: 200px;
+	margin-top: 40px;
 }
 
 .footer ul {
@@ -89,12 +89,12 @@ body a {
 	font-size: 12px;
 	color: #ff9900;
 	padding: 10px;
-	margin-left: -100px;
 	list-style: none;
+	padding-left: 0;
 }
 
 .footer ul li {
-	padding-left: 20px;
+	padding-right: 20px;
 	float: left;
 }
 
@@ -102,6 +102,5 @@ body a {
 	float: right;
 	font-size: 12px;
 	color: #fff;
-	margin-right: -60px;
-	margin-top: 50px;
+	margin-top: 10px;
 }
