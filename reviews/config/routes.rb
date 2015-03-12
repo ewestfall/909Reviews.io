@@ -1,10 +1,13 @@
 Rails.application.routes.draw do
   
   root 'products#index'
-  resources :products
-  resources :reviews
+  resources :products do
+    resources :reviews
+  end
 
-  get 'reviews' => 'reviews#review'
+  get 'reviews' => 'reviews#index'
+  post 'products/:id' => 'products#show'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

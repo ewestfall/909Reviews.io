@@ -9,12 +9,10 @@ class ProductsController < ApplicationController
 		@reviews = @product.reviews
 	end
 
-	# def new
-	# 	@reviews = Review.new
-	# end
-
-	# def create
-	# end
+	def new
+		@product = Product.find params[:product_id]
+		@review = Review.new(:product=>@product)
+	end
 
 	# def edit
 	# end
