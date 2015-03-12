@@ -14,6 +14,13 @@ class ProductsController < ApplicationController
 		@review = Review.new(:product=>@product)
 	end
 
+	def update
+		@review = Review.find(params[:id])
+		rating = @review.rating + 1
+		@review.update_attributes(rating: rating)
+		redirect_to(:back)
+	end
+
 	# def edit
 	# end
 
