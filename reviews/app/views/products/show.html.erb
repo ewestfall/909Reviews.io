@@ -1,69 +1,82 @@
-<div class="container" id="review">
-		<div class="row review title">	
+<div id="review">
+	<div class="container">
+		<div class="row">
 			<div class="col-md-4">
-				<div class="product_image"><%= image_tag @product.image %></div>
+				<div class="products">		
+					<div class="product_image"><%= image_tag @product.image %></div>
+					<p><%= @product.description %></p>
+				</div>
 			</div>
 			<div class="col-md-8">
-				<p><%= @product.description %></p>
-			</div>
-		</div>
-		<div class="row">
-			<div class="reviewform">
-				<div class="row">
-					<div class="col-md-12">
-						<h3>Add your review for <%= @product.name %></h3>
-					</div>
-				</div>
-				<%= form_for(:review, url: product_reviews_path(:product_id)) do |f| %>
-					<div class="row">
-						<div class="col-md-6">
-							<div class="form-group">
-								<label>Name</label>
-								<%= f.text_field :username, :placeholder => "Enter your name here.", :class => "form-control" %>
+				<div class="reviewform">
+					<h5>Add your review for <%= @product.name %></h5>
+				
+					<%= form_for(:review, url: product_reviews_path(:product_id)) do |f| %>
+						<div class="row">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Name</label>
+									<%= f.text_field :username, :placeholder => "Enter your name here.", :class => "form-control" %>
+								</div>
+								<div class="form-group">
+									<label>Title</label>
+									<%= f.text_field :reviewtitle, :placeholder => "Enter a title for your review.", :class => "form-control" %>
+								</div>
 							</div>
-							<div class="form-group">
-								<label>Title</label>
-								<%= f.text_field :reviewtitle, :placeholder => "Enter a title for your review.", :class => "form-control" %>
+							<div class="col-md-6">
+								<div class="form-group">
+									<label>Review</label>
+									<%= f.text_area :review, :placeholder => "Type your review here.", :class => "form-control reviewfield" %>
+								</div>
+							</div>
+							
+							<%= f.hidden_field :rating, :value => 0 %>
+							<%= f.hidden_field :product_id, :value => @product.id %>
+						</div>
+						<div class="row">
+							<div class="col-md-12">
+								<div class="submit">
+									<%= f.submit "Submit", :class => 'button btn btn-default' %>
+								</div>
 							</div>
 						</div>
-						<div class="col-md-6">
-							<div class="form-group">
-								<label>Review</label>
-								<%= f.text_area :review, :placeholder => "Type your review here.", :class => "form-control reviewfield" %>
-							</div>
-						</div>
-						
-						<%= f.hidden_field :rating, :value => 0 %>
-						<%= f.hidden_field :product_id, :value => @product.id %>
-					</div>
-					<div class="row">
-						<div class="col-md-12">
-							<div class="submit">
-								<%= f.submit "Submit", :class => 'button btn btn-default' %>
-							</div>
-						</div>
-					</div>
-				<%end%>
-			</div>
-		</div>
-
-		<% @reviews.each do |review| %>
-		<div class="row review">
-
-			<div class="col-md-8" id="review_detail">
-				<div class="review_title"><%= review.reviewtitle %></div>
-				<div class="review_description"><%= review.review %></div>
-				<div class="review_user"><%= review.username %></div>
-			</div>
-				<div class="col-md-2 upvote">
-					<div class="button">
-						<button class="button btn btn-default"><%= link_to "+1", product_path(review), class: "fa fa-caret-up", method: :put %></button>
-					</div>
+					<%end%>
 				</div>
-				<div class="col-md-2 rating" id="rating">
-					<h3 class="rating"><%= review.rating %></h3>
+				<div class="reviewslist">
+					<h5>Read Reviews</h5>
+					<% if @reviews.last %>
+						<% @reviews.each do |review| %>
+							<div id="review_detail">
+								<div class="review">
+									<div class="review_title">
+										<h4><%= review.reviewtitle %></h4>
+										<div class="upvote">
+											<span class="rating"><%= review.rating %></span>
+											<div class="up">
+												<%= link_to "", product_path(review), class: "glyphicon glyphicon-arrow-up", method: :put %>
+											</div>
+										</div>
+									</div>
+									<div class="review_description">
+										<p><%= review.review %></p>
+									</div>
+									<div class="metadata">
+										<%= image_tag 'profile.png' %>
+										<%= review.username %>
+										<span class="reviewtime">
+											<%= review.updated_at.strftime("%B %d, %Y @ %l:%M:%S %P") %>
+										</span>
+									</div>		
+								</div>
+							</div>
+						<% end %>
+					<% else %>
+						<div class="latestreview reviewtext">
+							No one has written a review yet... be the first by writing your review in the form above.
+						</div>
+					<% end %>
 				</div>
-					
+			</div>	
 		</div>
-		<% end %>	
+	</div>
 </div>
