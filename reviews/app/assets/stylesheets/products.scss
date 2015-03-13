@@ -21,9 +21,18 @@ body .col-md-4 {
 	margin-top: 40px;
 }
 
+.review .col-md-4 {
+	margin-top: 0px;
+	padding-left: 0px;
+}
+
 .product_image img {
 	width: 100%;
 	margin-bottom: 20px;
+}
+
+.review .product_image img {
+	margin-bottom: 0px;
 }
 
 .products {
@@ -80,12 +89,14 @@ body .col-md-4 {
 	margin-top: 10px;
 	padding:10px;
 	background: #FFF;
+	border-radius: 2px;
 }
 
 .row.review.title {
 	margin-top: 10px;
-	padding:10px;
-	background: #F1F1F1;
+	padding:20px;
+	background: white;
+	border-radius: 2px;
 }
 .review_title {
 	padding: 5px 0px;
@@ -148,4 +159,49 @@ h3.rating {
 
 .reviewtime {
 	float: right;
+}
+
+.reviewform {
+	background-color: #f1f1f1;
+	padding: 20px;
+	margin-top: 40px;
+	border-radius: 2px;
+	h3 {
+		margin-top: 10px;
+		padding-bottom: 20px;
+		border-bottom: 1px solid #e8e8e8;
+		margin-bottom: 20px;
+		text-align: center;
+	}
+	.submit {
+		border-top: 1px solid #e8e8e8;
+		padding-top: 20px;
+		margin-top: 20px;
+		text-align: center;
+	}
+
+	.button {
+		background-color: white;
+		// float: right;
+		text-align: center;
+		border: 1px solid #FF9900;
+		border-radius: 2px;
+		text-transform: uppercase;
+		letter-spacing: 1px;
+		font-size: 12px;
+		margin-bottom: 10px;
+		color: #FF9900;
+		width: 200px;
+	}
+
+	.button:hover {
+		border: 1px solid #FF9900;
+		background-color: #FF9900;
+		color: white;
+		text-decoration: none;
+	}
+}
+
+.form-group textarea.reviewfield {
+	height: 108px;
 }

@@ -1,17 +1,50 @@
 <div class="container" id="review">
 		<div class="row review title">	
-			<h1><%= @product.name %></h1>
+			<div class="col-md-4">
+				<div class="product_image"><%= image_tag @product.image %></div>
+			</div>
+			<div class="col-md-8">
+				<p><%= @product.description %></p>
+			</div>
 		</div>
-
-		<div class="form">
-			<%= form_for(:review, url: product_reviews_path(:product_id)) do |f| %>
-				<%= f.text_field :reviewtitle, :placeholder => "Title" %>
-				<%= f.text_field :review, :placeholder => "Type your review here" %>
-				<%= f.text_field :username, :placeholder => "Enter your name here" %>
-				<%= f.hidden_field :rating, :value => 0 %>
-				<%= f.hidden_field :product_id, :value => @product.id %>
-				<%= f.submit "Submit", :class => 'btn' %>
-			<%end%>
+		<div class="row">
+			<div class="reviewform">
+				<div class="row">
+					<div class="col-md-12">
+						<h3>Add your review for <%= @product.name %></h3>
+					</div>
+				</div>
+				<%= form_for(:review, url: product_reviews_path(:product_id)) do |f| %>
+					<div class="row">
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Name</label>
+								<%= f.text_field :username, :placeholder => "Enter your name here.", :class => "form-control" %>
+							</div>
+							<div class="form-group">
+								<label>Title</label>
+								<%= f.text_field :reviewtitle, :placeholder => "Enter a title for your review.", :class => "form-control" %>
+							</div>
+						</div>
+						<div class="col-md-6">
+							<div class="form-group">
+								<label>Review</label>
+								<%= f.text_area :review, :placeholder => "Type your review here.", :class => "form-control reviewfield" %>
+							</div>
+						</div>
+						
+						<%= f.hidden_field :rating, :value => 0 %>
+						<%= f.hidden_field :product_id, :value => @product.id %>
+					</div>
+					<div class="row">
+						<div class="col-md-12">
+							<div class="submit">
+								<%= f.submit "Submit", :class => 'button btn btn-default' %>
+							</div>
+						</div>
+					</div>
+				<%end%>
+			</div>
 		</div>
 
 		<% @reviews.each do |review| %>

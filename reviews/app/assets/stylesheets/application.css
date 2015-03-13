@@ -62,7 +62,7 @@ body a {
 .header {
 	background-color: #424242;
 }
-.form-group {
+.header .form-group {
 	float: right;
 	margin-right: 15px;
 }
